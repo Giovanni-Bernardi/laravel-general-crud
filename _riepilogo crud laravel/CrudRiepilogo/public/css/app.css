@@ -1,0 +1,52 @@
+body header {
+  width: 100%;
+  background-color: #dbdbdb;
+  z-index: 10;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+body header li {
+  list-style-type: none;
+  text-align: center;
+  padding: 0 20px;
+}
+
+body header h1 {
+  text-transform: uppercase;
+}
+
+body header #site-logo {
+  width: 80px;
+  height: auto;
+}
+
+body footer {
+  min-height: 100px;
+  background-color: #363636;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+}
+
+body footer ul {
+  margin: 0 15%;
+}
+
+body footer ul li {
+  list-style-type: none;
+}
+
+body footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+body main {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
