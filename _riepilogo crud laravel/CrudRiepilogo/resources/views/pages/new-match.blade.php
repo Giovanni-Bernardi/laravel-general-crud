@@ -1,62 +1,59 @@
 @extends('layout.main-layout')
 @section('title')
-    add a match
+add a match
 @endsection
 @section('content')
 
-    <main>
-        <h1>
-            add match
-        </h1>
-        
-        <form method="POST" action="{{route('store')}}">
+<main>
+    <h1>ADD A MATCH</h1>
+    <form method="POST" action="{{route('store')}}">
 
-            @csrf
-            @method('POST')
-            <div>
-                <div class="container-label">
-                    <label for="team1">
-                        Team 1
-                    </label>
-                </div>
-                <input type="text" name="team1">
+        @csrf
+        @method('POST')
+        <div>
+            <div class="container-label">
+                <label for="team1">
+                    Team 1
+                </label>
             </div>
-            <div>
-                <div class="container-label">
-                    <label for="team2">
-                        Team 2
-                    </label>
-                </div>
-                <input type="text" name="team2">
+            <input type="text" name="team1">
+        </div>
+        <div>
+            <div class="container-label">
+                <label for="team2">
+                    Team 2
+                </label>
             </div>
-            <div>
-                <div class="container-label">
-                     <label for="score1">
-                        Score 1
-                    </label>
-                </div>
-                <input type="text" name="score1">
+            <input type="text" name="team2">
+        </div>
+        <div>
+            <div class="container-label">
+                <label for="score1">
+                    Score 1
+                </label>
             </div>
-            <div>
-                <div class="container-label">
-                    <label for="score2">
-                        Score 2
-                    </label>
-                </div>
-                <input type="text" name="score2">
+            <input type="text" name="score1">
+        </div>
+        <div>
+            <div class="container-label">
+                <label for="score2">
+                    Score 2
+                </label>
             </div>
-            <div>
-                <div class="container-label">
-                    <label for="result">
-                        Result
-                    </label>
-                </div>
-                <input type="text" name="result">
+            <input type="text" name="score2">
+        </div>
+        <div>
+            <div class="container-label">
+                <label for="result">
+                    Result
+                </label>
             </div>
-            <div id="submit">
-                <input type="submit">
-            </div>
-        </form>
-    </main>
-    
+            <input type="text" name="result">
+        </div>
+        <div id="submit">
+            <input type="submit">
+        </div>
+    </form>
+</main>
+
 @endsection

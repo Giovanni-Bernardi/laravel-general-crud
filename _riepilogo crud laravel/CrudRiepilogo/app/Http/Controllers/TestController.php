@@ -6,53 +6,61 @@ use Illuminate\Http\Request;
 
 use App\MyMatch;
 
-class TestController extends Controller
-{
-    private function getValidationRules() {
+class TestController extends Controller {
+
+    private function getRules() {
+
         return [
-            'team1' => 'required|string|min:2|max:255',
-            'team2' => 'required|string|min:2|max:255',
-            'point1' => 'required|integer|min:0|max:100',
-            'point2' => 'required|integer|min:0|max:100',
-            'result' => 'required|boolean',
+            'team1' => 'required',
+            'team2' => 'required',
+            'score1' => 'required',
+            'score2' => 'required',
+            'result' => 'required',
+
         ];
     }
+    // HOME
+    public function home() {   
 
-    public function home() {
-        $matches = MyMatch::all();
-        return view('pages.home', compact('matches'));
+        $MyMatch = MyMatch::all();
+        return view('pages.home', compact('MyMatch'));
     }
+    // MATCH PICK ID
+    public function match($id) {
 
-    public function show($id) {
-        $match = MyMatch::findOrFail($id);
-        return view('pages.show', compact('match'));
+        $MyMatch = MyMatch::findOrFail($id);
+        return view('pages.match', compact('MyMatch'));
     }
-
-    public function create() {
-        return view('pages.create');
-    }
-
-    public function store(Request $request) {
-        $validated = $request -> validate($this -> getValidationRules());
-        $match = MyMatch::create($validated);
-        return redirect() -> route('show', $match -> id);
-    }
-
+    // MATCH EDIT
     public function edit($id) {
-        $match = MyMatch::findOrFail($id);
-        return view('pages.edit', compact('match'));
+
+        $MyMatch = MyMatch::findOrFail($id);
+        return view('pages.edit', compact('MyMatch'));
     }
-    
+    // UPDATE MATCH
     public function update(Request $request, $id) {
-        $match = MyMatch::findOrFail($id);
-        $validated = $request -> validate($this -> getValidationRules());
-        $match -> update($validated);
-        return redirect() -> route('show', $match -> id);
+
+        $validate = $request -> validate($this -> getRules());
+        $MyMatch = MyMatch::findOrFail($id);
+        $MyMatch -> update($validate);
+        return redirect() -> route('$MyMatch', $MyMatch -> id);
     }
-    
-    public function delete($id) {
-        $match = MyMatch::findOrFail($id);
-        $match -> delete();
-        return redirect() -> route('home');
+    // DELETE A MATCH
+    public function destroy($id) {
+
+        $MyMatch = MyMatch::findOrFail($id);
+        $MyMatch -> delete();
+        return redirect()->route('home');
+    }
+    // CREATE NEW MATCH
+    public function newMatch() {
+        return view('pages.new-match');
+    }
+    // STORE
+    public function store(Request $request) {
+
+        $validate = $request -> validate($this -> getRules());
+        $MyMatch = MyMatch::create($validate);
+        return redirect() -> route('$MyMatch', $MyMatch -> id);
     }
 }

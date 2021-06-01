@@ -1,10 +1,3 @@
 <footer>
-    <nav>
-        <ul>
-            <li><a href="#">Booking</a></li>
-            <li><a href="#">Restaurant</a></li>
-            <li><a href="#">Extras</a></li>
-            <li><a href="#">Room services</a></li>
-        </ul>
-    </nav>
+    <i><h1>BUY THIS ADVERTISING SPACE</h1></i>
 </footer>

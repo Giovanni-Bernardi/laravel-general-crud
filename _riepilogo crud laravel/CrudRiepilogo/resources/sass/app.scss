@@ -1,11 +1,19 @@
 body {
+    font-family: 'Roboto', sans-serif;
 
+    h1 {
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    
     header {
-            width: 100%;
-            background-color: rgb(219, 219, 219);
-            z-index: 10;
-            text-align: center;
-            margin-bottom: 50px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
 
             li {
                 list-style-type: none;
@@ -15,6 +23,7 @@ body {
 
             h1 {
                 text-transform: uppercase;
+                font-weight: 800;
             }
     
             #site-logo {
@@ -23,34 +32,51 @@ body {
             }
     }
     
-    footer {
-        min-height: 100px;
-        background-color: rgb(54, 54, 54);
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        justify-items: center;
-        align-items: center;
 
-        ul {
-            margin: 0 15%;
+    main {
 
-            li {
-                list-style-type: none;
-
-                a {
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-        }
-    }
-    
-    main{
         text-align: center;
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        
+        
+            #teamsTitle {
+                margin-bottom: 20px;
+                width: 10%;
+                margin: 0 45%;
+                margin-bottom: 30px;
+                border-radius: 8px;
+                color: #ffffff;
+                border: 2px solid #4e4e4e;
+                background-color: #4e4e4e
+            }
+
+            #newMatch {
+                width: 5%;
+                margin: 0 48%;
+                margin-top: 30px;
+                font-weight: bolder;
+                border-radius: 8px;
+                color: #4e4e4e;
+                border: 2px solid #2fe72f;
+                background-color: #2fe72f
+            }
+
+
+
+    }
+
+    footer {
+        min-height: 100px;
+        background-color: #363636;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+
     }
     
 }

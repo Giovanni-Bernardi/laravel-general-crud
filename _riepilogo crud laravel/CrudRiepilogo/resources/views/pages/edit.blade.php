@@ -9,7 +9,7 @@
             Update Match
         </h1>
         
-        <form method="POST" action="{{route('update', $match -> id)}}">
+        <form method="POST" action="{{route('update', $MyMatch -> id)}}">
 
             @csrf
             @method('POST')
@@ -19,7 +19,7 @@
                         Team 1
                     </label>
                 </div>
-                <input type="text" name="team1" value="{{$match -> team1}}">
+                <input type="text" name="team1" value="{{$MyMatch -> team1}}">
             </div>
             <div>
                 <div class="container-label">
@@ -27,7 +27,7 @@
                         Team 2
                     </label>
                 </div>
-                <input type="text" name="team2" value="{{$match -> team2}}">
+                <input type="text" name="team2" value="{{$MyMatch -> team2}}">
             </div>
             <div>
                 <div class="container-label">
@@ -35,7 +35,7 @@
                         Score1
                     </label>
                 </div>
-                <input type="number" name="score1" value="{{$match -> score1}}">
+                <input type="number" name="score1" value="{{$MyMatch -> score1}}">
             </div>
             <div>
                 <div class="container-label">
@@ -43,7 +43,7 @@
                         Score2
                     </label>
                 </div>
-                <input type="number" name="score2" value="{{$match -> score2}}">
+                <input type="number" name="score2" value="{{$MyMatch -> score2}}">
             </div>
             <div>
                 <div class="container-label">
@@ -51,7 +51,7 @@
                         Result
                     </label>
                 </div>
-                <input type="number" name="result" value="{{$match -> result}}">
+                <input type="number" name="result" value="{{$MyMatch -> result}}">
             </div>
             <div id="submit">
                 <input type="submit">
